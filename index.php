@@ -161,6 +161,9 @@ function linkmarklet_post()
         div.field input:focus {
             outline:none;
         }
+        div.field #title {
+            font-weight: bold;
+        }
         div.textarea label {
             /* display:none; */
         }
@@ -239,10 +242,7 @@ function linkmarklet_post()
             <input type="submit" name="save" id="save" value="Save" />
             <input type="submit" name="publish" id="publish" value="Publish" />
         </div>
-        <div class="field textfield" id="row-title">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" value="<?php echo $title; ?>" />
-        </div>
+
         <div class="field textfield" id="row-url">
             <label for="url">Link URL</label>
             <input type="text" name="url" id="url" value="<?php echo $url; ?>" />
@@ -254,6 +254,10 @@ function linkmarklet_post()
         <div class="field textarea" id="row-content">
             <label for="content">Content</label>
             <textarea name="content" id="content"><?php echo $selection; ?></textarea>
+        </div>
+        <div class="field textfield" id="row-title">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<?php echo $title; ?>" />
         </div>
     </form>
 <?php } ?>
