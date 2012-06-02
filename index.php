@@ -243,14 +243,6 @@ function linkmarklet_post()
             <input type="submit" name="publish" id="publish" value="Publish" />
         </div>
 
-        <div class="field textfield" id="row-url">
-            <label for="url">Link URL</label>
-            <input type="text" name="url" id="url" value="<?php echo $url; ?>" />
-        </div>
-        <div class="field textfield" id="row-slug">
-            <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" value="<?php if( isset( $settings['prepopulate_slug'] ) ) { echo sanitize_title( $title ); } ?>" />
-        </div>
         <div class="field textarea" id="row-content">
             <label for="content">Content</label>
             <textarea name="content" id="content"><?php echo $selection; ?></textarea>
