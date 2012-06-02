@@ -133,6 +133,15 @@ function linkmarklet_post()
             padding:5px 11px;
             cursor:pointer;
         }
+        div.actions input#publish {
+	color: #fff;
+	        background: -moz-linear-gradient(top,  #339900 0%, #339900 70%, #339900 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#339900), color-stop(70%,#339900), color-stop(100%,#339900));
+            background: -webkit-linear-gradient(top,  #339900 0%,#339900 70%,#339900 100%);
+            background: -o-linear-gradient(top,  #339900 0%,#339900 70%,#339900 100%);
+            background: -ms-linear-gradient(top,  #339900 0%,#339900 70%,#339900 100%);
+ }
+		
         div.actions input:first-of-type {
             float:left;
         }
