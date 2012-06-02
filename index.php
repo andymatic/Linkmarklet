@@ -24,10 +24,14 @@ $post_ID    = $post->ID;
 // Set Variables
 $title = isset( $_GET['t'] ) ? trim( strip_tags( html_entity_decode( stripslashes( $_GET['t'] ) , ENT_QUOTES) ) ) : '';
 
+$url = isset($_GET['u']) ? esc_url($_GET['u']) : ''; // moved from below since we need the $url before we can make the citation in the body texts
+
 $selection = '';
 if ( !empty($_GET['s']) ) {
     $selection = str_replace('&apos;', "'", stripslashes($_GET['s']));
     $selection = trim( htmlspecialchars( html_entity_decode($selection, ENT_QUOTES) ) );
+	$selection = '"'.$selection.'" (<a href="'.$url.'">link</a>)'; // add 'link' citation and quotes around selected text (if any)
+
 }
 
 if ( ! empty($selection) ) {
@@ -35,7 +39,6 @@ if ( ! empty($selection) ) {
     // $selection = '<p>' . str_replace('<p></p>', '', $selection) . '</p>';
 }
 
-$url = isset($_GET['u']) ? esc_url($_GET['u']) : '';
 $image = isset($_GET['i']) ? $_GET['i'] : '';
 
 function linkmarklet_post()
