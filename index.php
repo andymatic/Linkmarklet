@@ -141,7 +141,7 @@ function linkmarklet_post()
             padding:8px;
         }
         div.field label {
-            width:110px;
+            width: 70px; /* was 110px */
             position:absolute;
             left:8px;
             top:12px;
@@ -150,7 +150,7 @@ function linkmarklet_post()
         div.field input {
             display:block;
             width:100%;
-            padding-left:110px;
+            padding-left: 70px; /* was 110px */
             font-size:13px;
             border:0;
             -webkit-appearance:none;
@@ -159,12 +159,13 @@ function linkmarklet_post()
             outline:none;
         }
         div.textarea label {
-            display:none;
+            /* display:none; */
         }
         div.textarea {
             min-height:200px;
         }
         div.field textarea {
+			padding-left: 70px;
             display:block;
             width:100%;
             min-height:200px;
