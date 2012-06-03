@@ -82,7 +82,7 @@ class Linkmarklet
 
     function edit_bookmarklet()
     {
-        $linkmarklet = "javascript:var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='" . LINKMARKLET_URL . "',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&t='+e(d.title)+'&s='+e(s)+'&v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=0,scrollbars=1,status=0,width=400,height=400'))l.href=u;};if%20(/Firefox/.test(navigator.userAgent))%20setTimeout(a,%200);%20else%20a();void(0)";
+        $linkmarklet = "javascript:var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='" . LINKMARKLET_URL . "',l=d.location,e=encodeURIComponent,u=f+'?u='+e(l.href)+'&t='+e(d.title)+'&s='+e(s)+'&v=4';a=function(){if(!w.open(u,'t','toolbar=0,resizable=0,scrollbars=1,status=0,width=600,height=400'))l.href=u;};if%20(/Firefox/.test(navigator.userAgent))%20setTimeout(a,%200);%20else%20a();void(0)";
         ?>
         <p>Drag the Linkmarklet bookmarklet to your bookmark bar: <a href="<?php echo $linkmarklet; ?>">Linkmarklet</a></p>
         <p><strong>Alternative:</strong> Open <a href="<?php echo LINKMARKLET_URL . '/remove-this.php?' . $linkmarklet; ?>">this URL</a> in a new page, save it as a bookmark, <em>remove everything</em> before <code>javascript:</code>, and save</p>
