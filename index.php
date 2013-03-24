@@ -29,8 +29,6 @@ $url = isset($_GET['u']) ? esc_url($_GET['u']) : ''; // moved from below since w
 $selection = '';
 if ( !empty($_GET['s']) ) {
     $selection = str_replace('&apos;', "'", stripslashes($_GET['s']));
-	$linebreaks = array('\n', '\\n', '%0A');
-    $selection = str_replace( $linebreaks, " ", $selection); // added to remove line breaks
     $selection = trim( htmlspecialchars( html_entity_decode($selection, ENT_QUOTES) ) );
 	$selection = '"'.$selection.'" (<a href="'.$url.'">link</a>)'; // add 'link' citation and quotes around selected text (if any)
 
@@ -185,21 +183,16 @@ function linkmarklet_post()
 			padding-left: 70px;
             display:block;
             width:100%;
-            /* min-height:300px;
-            height:100%; */
+            min-height:200px;
+            height:100%;
             font-size:13px;
             border:0;
-            /* border-bottom:1px solid #CBCBCB; */
             -webkit-appearance:none;
             resize:none;
         }
         div.field textarea:focus {
             outline:none;
         }
-		div.field textarea#title {
-			height: 50px; }
-		div.field textarea#content {
-			height: 300px; }
         .message {
             padding:15px;
             max-width:600px;
@@ -258,15 +251,15 @@ function linkmarklet_post()
             <input type="submit" name="save" id="save" value="Save" />
             <input type="submit" name="publish" id="publish" value="Publish" />
         </div>
-        <div class="field textfield" id="row-title">
-            <label for="title">Title</label>
-            <textarea type="text" name="title" id="title"><?php echo $title; ?></textarea>
-        </div>
+
         <div class="field textarea" id="row-content">
             <label for="content">Content</label>
             <textarea name="content" id="content"><?php echo $selection; ?></textarea>
         </div>
-
+        <div class="field textfield" id="row-title">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" value="<?php echo $title; ?>" />
+        </div>
     </form>
 <?php } ?>
 <script type="text/javascript">
