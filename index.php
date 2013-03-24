@@ -247,11 +247,6 @@ function linkmarklet_post()
                     <input type="hidden" id="post_category" name="post_category" value="<?php echo $settings['category']; ?>" />
             <?php endif; ?>
         </div>
-        <div class="actions" id="row-actions">
-            <input type="submit" name="save" id="save" value="Save" />
-            <input type="submit" name="publish" id="publish" value="Publish" />
-        </div>
-
         <div class="field textarea" id="row-content">
             <label for="content">Content</label>
             <textarea name="content" id="content"><?php echo $selection; ?></textarea>
@@ -259,6 +254,10 @@ function linkmarklet_post()
         <div class="field textfield" id="row-title">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" value="<?php echo $title; ?>" />
+        </div>
+        <div class="actions" id="row-actions">
+            <input type="submit" name="save" id="save" value="Save" />
+            <input type="submit" name="publish" id="publish" value="Publish" />
         </div>
     </form>
 <?php } ?>
