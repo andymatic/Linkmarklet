@@ -251,6 +251,10 @@ function linkmarklet_post()
             <label for="content">Content</label>
             <textarea name="content" id="content"><?php echo $selection; ?></textarea>
         </div>
+            <div class="field textfield" id="row-tags">
+                <label for="url">Tags</label>
+                <input type="text" name="tags" id="tags" value="" />
+            </div>
         <div class="field textfield" id="row-title">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" value="<?php echo $title; ?>" />
@@ -268,6 +272,10 @@ function linkmarklet_post()
         var title = document.getElementById('row-title').offsetHeight;
         var url = document.getElementById('row-url').offsetHeight;
         var slug = document.getElementById('row-slug').offsetHeight;
+        <?php if( !empty( $settings['support_tags'] ) ) : ?>
+        var tags            = document.getElementById('row-tags').offsetHeight;
+        height = height - tags;
+        <?php endif; ?>
         var height = window_height - actions - title - url - slug - 25;
         document.getElementById('content').style.height = height + 'px';
     }
